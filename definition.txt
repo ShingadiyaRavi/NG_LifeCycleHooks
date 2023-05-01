@@ -1,0 +1,34 @@
+Task - 01 
+
+Try to all component life cycle hooks and perform it separately.
+    
+    - ngOnInit()
+    - ngOnChanges(Variable : dataType)
+    - ngDoCheck()
+    - ngAfterContentInit()
+    - ngAfterContentChecked()
+    - ngAfterViewInit()
+    - ngAfterViewChecked()
+
+Extra (Sub) Task : This project is learn for the how to data pass into parent to child component & child to parent component...
+    Parent To Child:
+        We are pass using property binding. we need to childComponent have a this variable we are here binding otherwie it will genererate error... and we need to @Input() decorator
+        This is required to write in the Parent html file.
+
+            eg : <app-childComponent [childDataVariable]="parentDatavariable"></app-childComponent>
+        and in child ts file we need to declare like 
+            eg : @Input() childDataVariable:any
+    
+    Child To Parent:
+        When we need to data pass child to the parent then we need to event emitter so we can do that and also we need to event binding for the get data from the child. in @Output() decorator.
+
+            eg : <app-childComponent (childDataEvent)="getData($event)"></app-childComponent>
+
+            This is in child ts file
+            eg : @Output() childDataEvent = new EventEmitter<string>();
+
+            and we need to data emit in submit button.
+
+            addData(data:string){
+                this.childDataEvent.emit(data);
+            }

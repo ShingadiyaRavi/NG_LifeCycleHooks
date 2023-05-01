@@ -1,0 +1,6 @@
+
+<p>Parent Data Assign To Child: <b>{{Data.parentUser}}</b></p>
+<p>Child Data Assign To Parent: <b>{{child.value}}</b></p>
+
+<input type="text" #child name="childUser" value="{{Data.parentUser}}">
+<button (click)="addData(child.value)">Child To Parent</button>

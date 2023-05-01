@@ -1,0 +1,20 @@
+<p>Parent Data Assign To Child : - <b>{{parentData.parentUser}} </b></p>
+<p>Child Data Assign To Parent : - <b>{{childData}} </b></p>
+
+<form #DataForm="ngForm" (ngSubmit)="addData(DataForm.value)">
+  <input type="text" ngModel name="parentUser" value="{{childData}}">
+  <button>Parent To Child</button>
+</form>
+<hr>
+
+
+
+<!-- This is used for the only pass data parent to child
+<app-child [Data]="parentData"></app-child> -->
+
+<!-- This is used for the only get the data from the child
+<app-child (childDataEvent)="getData($event)"></app-child> -->
+
+
+<!-- This is used for the only get and pass the data between parent to child and child to parent -->
+<app-child [Data]="parentData" (childDataEvent)="getData($event)"></app-child>
